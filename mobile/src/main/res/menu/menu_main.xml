@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.woznymac.animationservice.MainActivity">
+    <item
+        android:id="@+id/freeform_mode_checking"
+        android:orderInCategory="100"
+        android:title="@string/freeform_mode_checking"
+        app:showAsAction="never" />
+</menu>

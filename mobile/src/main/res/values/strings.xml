@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AnimationService</string>
+    <string name="action_settings">Settings</string>
+    <string name="freeform_mode_checking">Check Freeform</string>
+</resources>
