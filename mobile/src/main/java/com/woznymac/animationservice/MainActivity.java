@@ -22,20 +22,10 @@ import java.lang.reflect.Method;
 
 public class MainActivity extends AppCompatActivity implements Window.OnRestrictedCaptionAreaChangedListener {
 
-//    /** First static stack ID. */
-//    public static final int FIRST_STATIC_STACK_ID = 0;
-//    /** Home activity stack ID. */
-//    public static final int HOME_STACK_ID = FIRST_STATIC_STACK_ID;
-
     /** ID of stack where fullscreen activities are normally launched into. */
     public static final int FULLSCREEN_WORKSPACE_STACK_ID = 1;
     /** ID of stack where freeform/resized activities are normally launched into. */
     public static final int FREEFORM_WORKSPACE_STACK_ID = FULLSCREEN_WORKSPACE_STACK_ID + 1;
-
-//    /** ID of stack that occupies a dedicated region of the screen. */
-//    public static final int DOCKED_STACK_ID = FREEFORM_WORKSPACE_STACK_ID + 1;
-//    /** ID of stack that always on top (always visible) when it exist. */
-//    public static final int PINNED_STACK_ID = DOCKED_STACK_ID + 1;
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -117,10 +107,6 @@ public class MainActivity extends AppCompatActivity implements Window.OnRestrict
                                 Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
         ActivityOptions activityOptions = getActivityOptions(FREEFORM_WORKSPACE_STACK_ID);
 
-        Display mdisp = getWindowManager().getDefaultDisplay();
-        Point mdispSize = new Point();
-        mdisp.getSize(mdispSize);
-
         Rect bounds = new Rect(0, 100, 720, 640);
 
         activityOptions.setLaunchBounds(bounds);
@@ -129,8 +115,6 @@ public class MainActivity extends AppCompatActivity implements Window.OnRestrict
 
         Log.d(TAG, bundle.toString());
         Log.d(TAG, intent.toString());
-        Log.d(TAG, mdisp.toString());
-        Log.d(TAG, mdispSize.toString());
         try {
             startActivity(intent, bundle);
             Log.d(TAG, "startActivity");
